@@ -34,8 +34,8 @@ from routes.categorise import categorise_bp
 app.register_blueprint(categorise_bp)
 
 # Day 5 — /query (RAG)
-# from routes.query import query_bp
-# app.register_blueprint(query_bp)
+from routes.query import query_bp
+app.register_blueprint(query_bp)
 
 # Day 6 — /generate-report (async)
 # from routes.generate_report import generate_report_bp
