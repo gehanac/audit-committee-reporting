@@ -1,35 +1,3 @@
-"""
-routes/health.py  — DAY 7 TASK (AI Developer 2)
--------------------------------------------------
-Endpoint: GET /health
-
-What it does:
-  Returns a health-check report for the entire AI service.
-  This lets the Java backend (and Docker) know if the AI service is alive.
-
-Response example:
-  {
-    "status":               "healthy",
-    "model_name":           "llama-3.3-70b-versatile",
-    "avg_response_time_ms": 842,
-    "chroma_doc_count":     47,
-    "chroma_status":        "ok",
-    "redis_status":         "ok",
-    "cache_stats": {
-      "hits":     12,
-      "misses":    8,
-      "hit_rate":  0.6
-    },
-    "uptime":         "2h 14m 33s",
-    "uptime_seconds": 8073
-  }
-
-Used by:
-  • Docker healthcheck (docker-compose.yml)
-  • Java AiServiceClient.java health checks
-  • The AI Developer 2 Demo Day section (show this endpoint live)
-"""
-
 import os
 import time
 import logging

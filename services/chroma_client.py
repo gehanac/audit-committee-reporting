@@ -1,23 +1,3 @@
-"""
-services/chroma_client.py  — DAY 4 TASK (AI Developer 2)
-----------------------------------------------------------
-This file sets up ChromaDB, our vector database.
-
-What is a vector database?
-  Normal databases store text as-is. A vector database converts text into
-  numbers (called "embeddings") that represent the MEANING of the text.
-  This lets us find documents that are similar in meaning, not just keywords.
-
-What this file does:
-  • Creates a ChromaDB client that saves data to disk (so it persists across restarts)
-  • Creates (or opens) a collection called "audit_documents"
-  • Exposes helper functions that other files use
-
-Used by:
-  • routes/query.py  — to search for relevant documents
-  • AI Developer 1's RAG pipeline — to store documents
-"""
-
 import os
 import logging
 import chromadb

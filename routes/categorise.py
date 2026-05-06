@@ -1,38 +1,3 @@
-"""
-routes/categorise.py  — DAY 3 TASK (AI Developer 2)
------------------------------------------------------
-Endpoint: POST /categorise
-
-What it does:
-  Takes an audit finding text and classifies it into one of 8 predefined
-  categories (e.g. "Financial Risk", "IT & Cybersecurity", etc.)
-
-Request body (JSON):
-  {
-    "text":  "The company failed to reconcile bank statements for Q3.",
-    "fresh": false   ← optional; set to true to skip cache and force new AI call
-  }
-
-Success response (200):
-  {
-    "category":  "Financial Risk",
-    "confidence": 0.92,
-    "reasoning": "Bank reconciliation failures directly relate to financial reporting controls.",
-    "meta": {
-      "model_used":       "llama-3.3-70b-versatile",
-      "tokens_used":      87,
-      "response_time_ms": 734,
-      "cached":           false,
-      "confidence":       0.92,
-      "is_fallback":      false
-    }
-  }
-
-Error responses:
-  400 — missing/invalid input
-  200 with is_fallback=true — Groq API failed, returns safe default response
-"""
-
 import os
 import json
 import time

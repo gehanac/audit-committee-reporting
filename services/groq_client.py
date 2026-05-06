@@ -1,20 +1,3 @@
-"""
-services/groq_client.py  — DAY 2 TASK (AI Developer 2)
---------------------------------------------------------
-This is the CORE service that every AI endpoint uses to talk to Groq.
-
-What it does:
-  • Sends messages to the LLaMA-3.3-70b model via Groq API
-  • Automatically retries up to 3 times if the API fails (backoff: 1s → 2s → 4s)
-  • Logs every error so you can debug problems
-  • Tracks the last 10 response times (used by the /health endpoint)
-  • Returns (text, tokens_used, response_time_ms) on success
-
-How to use it from another file:
-  from services.groq_client import call_groq
-  text, tokens, ms = call_groq([{"role": "user", "content": "Hello"}])
-"""
-
 import os
 import time
 import logging

@@ -1,27 +1,3 @@
-"""
-tests/test_ai_developer2.py  — DAY 10 TASK (AI Developer 2)
-------------------------------------------------------------
-10 unit tests covering all AI Developer 2 modules.
-
-How to run:
-    pytest tests/test_ai_developer2.py -v
-
-All Groq API calls are MOCKED — tests pass without a live internet connection.
-This is required by the Demo Day checklist: "Groq API mocked — tests run without live network"
-
-Tests:
-  1.  test_call_groq_returns_tuple          — GroqClient returns (text, tokens, ms)
-  2.  test_call_groq_retries_on_failure     — retries 3 times before raising
-  3.  test_make_cache_key_is_deterministic  — same input → same SHA256 hash
-  4.  test_make_cache_key_differs_by_input  — different input → different hash
-  5.  test_get_cached_returns_none_on_miss  — cache miss returns None
-  6.  test_get_cached_returns_data_on_hit   — cache hit returns stored data
-  7.  test_categorise_endpoint_success      — /categorise returns 200 with correct fields
-  8.  test_categorise_endpoint_missing_text — /categorise returns 400 on missing input
-  9.  test_generate_report_async_returns_job_id — async mode returns 202 + job_id
-  10. test_health_endpoint_returns_status   — /health returns 200 + "status" field
-"""
-
 import json
 import pytest
 import sys

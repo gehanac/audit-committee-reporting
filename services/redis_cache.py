@@ -1,29 +1,3 @@
-"""
-services/redis_cache.py  — DAY 8 TASK (AI Developer 2)
---------------------------------------------------------
-This file handles caching of AI responses in Redis.
-
-Why do we cache AI responses?
-  Groq API calls cost time (500ms–2s) and tokens.
-  If someone asks the SAME question twice, we can return the stored answer
-  in milliseconds instead of calling Groq again.
-
-How the cache key works:
-  We combine the endpoint name + request data, hash it with SHA256,
-  and use that hash as the Redis key.
-  Example: "categorise" + {"text": "Missing controls..."} → sha256 hash → stored in Redis
-
-Cache settings:
-  • TTL (Time To Live) = 15 minutes (900 seconds)
-  • After 15 minutes, the cached answer is automatically deleted by Redis
-  • Callers can pass fresh=True to skip the cache and force a new AI call
-
-Hit/miss counters:
-  • hit_count  — how many times we returned a cached answer (fast)
-  • miss_count — how many times we had to call Groq (slow)
-  • These are shown in the /health endpoint
-"""
-
 import os
 import json
 import hashlib
